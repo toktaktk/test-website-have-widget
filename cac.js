@@ -20,7 +20,7 @@
     chatboxFrame.style.bottom = '90px';
     chatboxFrame.style.right = '20px';
     chatboxFrame.style.width = '350px';
-    chatboxFrame.style.height = '400px';
+    chatboxFrame.style.height = '430px';
     chatboxFrame.style.border = '1px solid #ccc';
     chatboxFrame.style.zIndex = '1000';
     chatboxFrame.src = "chatbox.html";

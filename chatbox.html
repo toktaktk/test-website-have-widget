@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Box</title>
+    <style>
+        #messages {
+            width: 100%;
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        #message-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+        }
+        
+        #send-btn {
+            padding: 10px 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+
+<div id="messages">
+    <!-- Messages will be shown here -->
+</div>
+
+<input type="text" id="message-input" placeholder="Type your message here...">
+<button id="send-btn">Send</button>
+
+<script>
+    // Simple mockup chat functionality
+    const messagesDiv = document.getElementById('messages');
+    const messageInput = document.getElementById('message-input');
+    const sendButton = document.getElementById('send-btn');
+
+    function sendMessage() {
+        const message = messageInput.value.trim();
+        if(message) {
+            // Display the message in messages div
+            messagesDiv.innerHTML += `<div>${message}</div>`;
+            // Clear the input field
+            messageInput.value = '';
+            // Scroll to the bottom of the message div
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    }
+
+    // Event listener for send button
+    sendButton.addEventListener('click', sendMessage);
+
+    // Event listener for enter key
+    messageInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+</script>
+
+</body>
+</html>
